@@ -15,4 +15,4 @@ app.use(cookieParser());
 
 app.use('/', require('./routes/index.js'));
 
-app.listen(8080, () => { console.log("Connected !") });
+app.listen(80, () => { console.log("Connected !") });
