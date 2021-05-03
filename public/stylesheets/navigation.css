@@ -1,0 +1,40 @@
+#location_nav {
+    width: 70px;
+    height: 5px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 11px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+}
+#main_lo, #paro_lo {
+    width: 5px;
+    height: 5px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+#menu_lo {
+    width: 5px;
+    height: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+#menu_lo .bar {
+    transition: background-color 0.2s ease;
+    width: 100%;
+    height: 1.5px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+#menu_lo.a1 .bar {
+    transition: background-color 0.2s ease;
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+#location_nav .a1:not(#menu_lo) {
+    transition: background-color 0.2s ease;
+    background-color: rgba(255, 255, 255, 1);
+}

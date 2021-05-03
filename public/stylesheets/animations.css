@@ -1,0 +1,42 @@
+/* main animation */
+#main.off {
+    transition: transform 0.2s ease;
+    transform: translateX(-100%) !important;
+}
+#main.on {
+    transition: transform 0.2s ease;
+    transform: translateX(0%) !important;
+}
+
+/* aprody animation */
+#parody.on {
+    transition: transform 0.2s ease;
+    transform: translateX(0%) !important;
+}
+#parody.off {
+    transition: transform 0.2s ease;
+    transform: translateX(100%) !important;
+}
+
+
+
+/* menu animation */
+#menu.on {
+    transition: transform 0.2s ease;
+    transform: translateX(0%) !important;
+}
+#menu.off {
+    transition: transform 0.2s ease;
+    transform: translateX(-100%) !important;
+}
+
+
+/* bottom slider animation */
+#bottom_slider.off {
+    transition: transform 0.4s ease-in-out;
+    transform: translate(0%, 15%) translateY(100%) !important;
+}
+#bottom_slider.on {
+    transition: transform 0.4s ease-in-out;
+    transform: translate(0%, 15%) translateY(0%) !important;
+}

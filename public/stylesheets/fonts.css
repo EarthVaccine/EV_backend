@@ -1,0 +1,48 @@
+/* Apple SD Gothic Neo fonts */
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoB.ttf');
+    font-family: "AppleSDGothicNeoB00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoEB.ttf');
+    font-family: "AppleSDGothicNeoEB00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoH.ttf');
+    font-family: "AppleSDGothicNeoH00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoL.ttf');
+    font-family: "AppleSDGothicNeoL00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoM.ttf');
+    font-family: "AppleSDGothicNeoM00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoR.ttf');
+    font-family: "AppleSDGothicNeoR00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoSB.ttf');
+    font-family: "AppleSDGothicNeoSB00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoT.ttf');
+    font-family: "AppleSDGothicNeoT00";
+}
+@font-face {
+    src: url('/stylesheets/fonts/AppleSDGothic/AppleSDGothicNeoUL.ttf');
+    font-family: "AppleSDGothicNeoUL00";
+}
+
+
+/* Godo fonts */
+@font-face {
+    src: url('/stylesheets/fonts/Godo/GodoB.ttf');
+    font-family: "Godo B";
+}
+@font-face {
+    src: url('/stylesheets/fonts/Godo/GodoM.ttf');
+    font-family: "Godo M";
+}
