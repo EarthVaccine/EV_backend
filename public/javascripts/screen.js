@@ -288,6 +288,7 @@ menu_page.addEventListener("touchend", (e) => {
         if((endX - startX) > -30) {
             menu_page_status.result = true;
         } else {
+            main_page_status.result = false;
             main_page_status.result = true;
             menu_page_status.result = false;
             parody_page_status.result = false;
