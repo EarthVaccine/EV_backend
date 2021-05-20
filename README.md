@@ -40,3 +40,11 @@
   
 ### git pull
 ```git pull```
+
+
+## mongoose 설정 방법
+router 파일에 
+```javascript
+const User = require('../modles/User');
+```
+로 작성을 하여서 불러와주세요 !
