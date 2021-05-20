@@ -30,11 +30,11 @@
     height: 1.5px;
     background-color: rgba(255, 255, 255, 0.3);
 }
-#menu_lo.a1 .bar {
+#menu_lo.activedPage .bar {
     transition: background-color 0.2s ease;
     background-color: rgba(255, 255, 255, 1) !important;
 }
-#location_nav .a1:not(#menu_lo) {
+#location_nav .activedPage:not(#menu_lo) {
     transition: background-color 0.2s ease;
     background-color: rgba(255, 255, 255, 1);
 }

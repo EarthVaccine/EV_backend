@@ -29,10 +29,10 @@ main_page_status.registerListener(function(val) {
         if(!main_page.classList.contains("on")) {
             main_page.classList.remove("on", "off");
             main_page.classList.add("on");
-            main_lo.classList.remove("a1");
-            paro_lo.classList.remove("a1");
-            menu_lo.classList.remove("a1");
-            main_lo.classList.add("a1");
+            main_lo.classList.remove("activedPage");
+            paro_lo.classList.remove("activedPage");
+            menu_lo.classList.remove("activedPage");
+            main_lo.classList.add("activedPage");
         }
     } else if(val === false) {
         main_page.classList.remove("on", "off");
@@ -83,10 +83,10 @@ parody_page_status.registerListener(function(val) {
         if(!parody_page.classList.contains("on")) {
             parody_page.classList.remove("on", "off");
             parody_page.classList.add("on");
-            main_lo.classList.remove("a1");
-            paro_lo.classList.remove("a1");
-            menu_lo.classList.remove("a1");
-            paro_lo.classList.add("a1");
+            main_lo.classList.remove("activedPage");
+            paro_lo.classList.remove("activedPage");
+            menu_lo.classList.remove("activedPage");
+            paro_lo.classList.add("activedPage");
         }
     } else if(val === false) {
         parody_page.classList.remove("on", "off");
@@ -113,10 +113,10 @@ menu_page_status.registerListener(function(val) {
         if(!menu_page.classList.contains("on")) {
             menu_page.classList.remove("on", "off");
             menu_page.classList.add("on");
-            main_lo.classList.remove("a1");
-            paro_lo.classList.remove("a1");
-            menu_lo.classList.remove("a1");
-            menu_lo.classList.add("a1");
+            main_lo.classList.remove("activedPage");
+            paro_lo.classList.remove("activedPage");
+            menu_lo.classList.remove("activedPage");
+            menu_lo.classList.add("activedPage");
         }
     } else if(val === false) {
         menu_page.classList.remove("on", "off");
