@@ -9,6 +9,47 @@
     <link rel="stylesheet" href="/stylesheets/animations.css">
     <link rel="stylesheet" href="/stylesheets/navigation.css">
     <style>
+        #menu .m_guide_span {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: AppleSDGothicNeoL00;
+            margin-bottom: 10px;
+            display: block;
+        }
+        #menu > .custom_box {
+            width: 100%;
+            height: 430px;
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            overflow-y: auto;
+        }
+        #menu .cbx {
+            width: 100%;
+            height: 50px;
+            border-top: 0.3px solid rgba(0, 0, 0, 0.15);
+            border-bottom: 0.3px solid rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease-in-out;
+        }
+        #menu .cbx.off {
+            background-color: rgba(100, 100, 100, 0.1);
+        }
+        #menu .cbx.on {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        #menu .checkspan {
+            color: white;
+            font-family: AppleSDGothicNeoL00;
+            font-size: 17px;
+        }
+        #menu .cbx input[type=checkbox] {
+            margin-right: 15px;
+        }
     </style>
 </head>
 <body>
@@ -42,10 +83,20 @@
 
         <div id="parody" class="off"></div>
 
-        <div id="menu" class="off"></div>
+        <div id="menu" class="off">
+            <span class="m_guide_span">설정</span>
+            <div class="custom_box">
+                <div class="cbx off">
+                    <input type="checkbox" name="" id="a1">
+                    <span class="checkspan">지구온난화</span>
+                </div>
+            </div>
+            <span class="m_guid_span">후원하기</span>
+        </div>
 
         <div id="bottom_slider" class="off">
-            <div class="sliderBar"></div>
+            <div class="sliderBar">
+            </div>
         </div>
     </div>
 
@@ -81,6 +132,17 @@
                 //         console.log(data.msg);
                 //     }
                 // }
+            }
+        }
+        let cbx = document.querySelector(".cbx");
+        let a11 = document.getElementById("a1");
+        cbx.ontouchend = () => {
+            a11.checked = a11.checked ? false : true;
+            cbx.classList.remove("off", "on");
+            if(a11.checked) {
+                cbx.classList.add("on");
+            } else {
+                cbx.classList.add("off");
             }
         }
     </script>

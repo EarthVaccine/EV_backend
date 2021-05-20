@@ -52,6 +52,8 @@ body {
   position: absolute;
   border-radius: 0 25px 25px 0;
   background-color: rgba(23, 23, 23, 0.82);
+  padding: 5%;
+  box-sizing: border-box;
 }
 
 
