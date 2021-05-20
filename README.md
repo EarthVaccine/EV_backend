@@ -20,3 +20,23 @@
 - ```npm i```
 - ```node app.js```
 - port = 80
+  
+#  
+#  
+  
+깃허브 커밋하실때 각자 branch 생성해서 거기에 커밋해주세요.  
+> branch 생성 ```git branch <생성할 branch 이름>```  
+> branch 이동 ```git checkout <branch 이름>```  
+  
+### git push
+- " add: <추가 한 내용> "  
+- " feat: <수정 한 내용> "   
+- " del: <삭제 한 내용> "  
+
+```git add .```  
+```git commit -m "feat: README.md"```  
+```git push```  
+  
+  
+### git pull
+```git pull```
