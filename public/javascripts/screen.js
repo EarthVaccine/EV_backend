@@ -322,7 +322,6 @@ parody_page.addEventListener("touchmove", (e) => {
     if(parody_page_status.result) {
         if((y1 - e.changedTouches[0].pageY > 5 || y1 - e.changedTouches[0].pageY < -5) && !parody_page_move_x) {  // 페러디 페이지에서 위나 아래로 스크롤 할 때.
             parody_page_move_y = true;
-            e.preventDefault();
             return;
         } else if(x1 - e.changedTouches[0].pageX < -5) {
             parody_page_move_x = true;
