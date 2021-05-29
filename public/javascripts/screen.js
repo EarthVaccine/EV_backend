@@ -182,7 +182,7 @@ main_page.addEventListener("touchstart", (e) => {
 main_page.addEventListener("touchmove", (e) => {
     // if(e.target !== e.currentTarget) if(e.target.className == "main_container") return;
     if(main_page_status.result) {
-        if(x1 - e.changedTouches[0].pageX < 0) {
+        if(x1 - e.changedTouches[0].pageX < 0) {  // 메인페이지에서 왼쪽으로 넘기려 했을 때, 메인페이지는 가만히 있고 메뉴페이지만 이동.
             e.preventDefault();
             x2 = x1 - e.changedTouches[0].pageX;
             if(x2*-1 > window.innerWidth) {
@@ -194,7 +194,7 @@ main_page.addEventListener("touchmove", (e) => {
             menu_page.style.transform = `translateX(calc(-100% + ${x2*-1}px))`;
             main_page.style.transform = 'translateX(0%)';
             parody_page.style.transform = 'translateX(100%)';
-        } else {
+        } else {  // 메인페이지를 오른쪽으로 넘기려 했을 때, 메인페이지와 페러디페이지가 같이 왼쪽으로 이동.
             x2 = x1 - e.changedTouches[0].pageX;
             if(x2 > window.innerWidth) {
                 menu_page.style.transform = 'translateX(-100%)';
@@ -207,16 +207,16 @@ main_page.addEventListener("touchmove", (e) => {
             menu_page.style.transform = 'translateX(-100%)';
         }
         if(main_animation_page_status.result && !bottom_slider_status.result) {
-            if(y1 - e.changedTouches[0].pageY > 0) {
+            if(y1 - e.changedTouches[0].pageY > 0) {  // 메인페이지에서 화면을 위로 드래그 할 때, bottom slider 위로 애니메이션.
                 main_page.style.transform = "translateX(0%)";
                 menu_page.style.transform = "translateX(-100%)";
                 parody_page.style.transform = "translateX(100%)";
                 y2 = y1 - e.changedTouches[0].pageY;
                 bottom_slider.style.transform = `translate(0%, 15%) translateY(calc(100% - ${y2}px))`;
-                if(y2 > (window.innerHeight - window.innerHeight*0.15)) {
+                if(y2 > (window.innerHeight - window.innerHeight*0.15)) {  // bottom slider 높이가 최대치로 올라왔을 때 가만히.
                     bottom_slider.style.transform = "translate(0%, 15%) translate(0%)";
                 }
-            } else {
+            } else { // 메인페이지에서 화면을 아래로 드래그 할 때, bottom slider 는 가만히.
                 bottom_slider.style.transform = "translate(0%, 15%) translateY(100%)";
             }
         }
@@ -300,41 +300,65 @@ menu_page.addEventListener("touchend", (e) => {
 
 // parody screen animation
 parody_page.addEventListener("touchstart", (e) => {
+    startX = e.changedTouches[0].screenX;
+    x1 = e.changedTouches[0].pageX;
+    startY = e.changedTouches[0].screenY;
+    y1 = e.changedTouches[0].pageY;
+    if(e.target !== e.currentTarget) if(e.target.className == "form-control" || e.target.className == "mainService" || e.target.className.indexOf("service") != -1 || e.target.className.indexOf("Container") != -1) {
+        return;
+    }
     if(parody_page_status.result) {
         e.preventDefault();
         startX = e.changedTouches[0].screenX;
         x1 = e.changedTouches[0].pageX;
-        parody_page.classList.remove("on", "off");
-        main_page.classList.remove("on", "off");
-        parody_page.style.transform = "translateX(0%)";
-        main_page.style.transform = "translateX(-100%)";
+        startY = e.changedTouches[0].screenY;
+        y1 = e.changedTouches[0].pageY;
     }
 });
+let parody_page_move_x = false;
+let parody_page_move_y = false;
 parody_page.addEventListener("touchmove", (e) => {
+    if(e.target !== e.currentTarget) if(e.target.className == "form-control") return; // input에 드래그를 했을 때, 끝내기
     if(parody_page_status.result) {
-        if(x1 - e.changedTouches[0].pageX > 0) {
+        if((y1 - e.changedTouches[0].pageY > 5 || y1 - e.changedTouches[0].pageY < -5) && !parody_page_move_x) {  // 페러디 페이지에서 위나 아래로 스크롤 할 때.
+            parody_page_move_y = true;
             e.preventDefault();
-            parody_page.style.transform = 'translateX(0%)';
-            menu_page.style.transform = 'translateX(-100%)';
-        } else {
-            x2 = x1 - e.changedTouches[0].pageX;
-            parody_page.style.transform = `translateX(calc(0% - ${x2}px))`;
-            main_page.style.transform = `translateX(calc(-100% - ${x2}px))`;
+            return;
+        } else if(x1 - e.changedTouches[0].pageX < -5) {
+            parody_page_move_x = true;
+            parody_page.classList.remove("on", "off");
+            main_page.classList.remove("on", "off");
+            if(x1 - e.changedTouches[0].pageX > 0) {   // 페러디 화면에서 오른쪽으로 넘기려 했을 때 가만히.
+                e.preventDefault();
+                parody_page.style.transform = 'translateX(0%)';
+                menu_page.style.transform = 'translateX(-100%)';
+            } else {  // 페러디 화면에서 왼쪽으로 넘기려 했을 때.
+                x2 = x1 - e.changedTouches[0].pageX;
+                parody_page.style.transform = `translateX(calc(0% - ${x2}px))`;
+                main_page.style.transform = `translateX(calc(-100% - ${x2}px))`;
+            }
         }
     }
 });
 parody_page.addEventListener("touchend", (e) => {
+    if(e.target !== e.currentTarget) if(e.target.className == "form-control") return; // input에 드래그를 했을 때, 끝내기
     if(parody_page_status.result) {
         endX = e.changedTouches[0].screenX;
         if((endX - startX) < 30) {
-            parody_page_status.result = true;
-            main_page_status.result = false;
+            if(parody_page_move_x) {
+                parody_page_status.result = true;
+                main_page_status.result = false;
+            }
         } else {
-            main_page_status.result = true;
-            menu_page_status.result = false;
-            parody_page_status.result = false;
-            bottom_slider_status.result = false;
+            if(!parody_page_move_y) {
+                main_page_status.result = true;
+                menu_page_status.result = false;
+                parody_page_status.result = false;
+                bottom_slider_status.result = false;
+            }
         }
+        parody_page_move_x = false;
+        parody_page_move_y = false;
     }
 });
 

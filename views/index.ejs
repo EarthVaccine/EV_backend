@@ -204,11 +204,10 @@
             }
         }
         let cbx = document.querySelector(".cbx");
-        let a11 = document.getElementById("a1");
         cbx.ontouchend = () => {
-            a11.checked = a11.checked ? false : true;
+            cbx.firstElementChild.checked = cbx.firstElementChild.checked ? false : true;
             cbx.classList.remove("off", "on");
-            if(a11.checked) {
+            if(cbx.firstElementChild.checked) {
                 cbx.classList.add("on");
             } else {
                 cbx.classList.add("off");
