@@ -100,42 +100,37 @@
 
         <div id="parody" class="off">
             <div class="inputContainer">
-                <form action="/electronicalc" method="POST">
+                <form>
                     <div class="mb-3">
                         <label class="form-label">전기량을 입력해주세요</label>
-                        <input type="number" class="form-control">
-                    </div>
-            
-                    <div class="d-grid gap-2">
-                        <input class="btn" id="inputButton" type="submit">결과 확인하기</button>
+                        <input type="number" class="form-control" onkeyup="electronicCalc()" id="electronicValue">
                     </div>
                 </form>
             </div>
 
-            <% if(isopen) { %>
             <div class="mainContainer">
             <div class="mainTitle">전기를 아꼈더라면...</div>
                 <div class="subContainer">
                     <div class="mainService">
                         <div class="services">
                             <span class="serviceTitle">전기세</span>
-                            <span class="serviceMoney" id="electronicMoney"><b>51,208</b>원 아낌</span>
+                            <span class="serviceMoney" id="electronicMoney"></span>
                         </div>
                         <div class="services">
                             <span class="serviceTitle">핸드폰 충전</span>
-                            <span class="serviceMoney" id="smartphoneCharge"><b>1614%</b> 충전</span>
+                            <span class="serviceMoney" id="smartphoneCharge"></span>
                         </div>
                         <div class="services">
                             <span class="serviceTitle">전기자동차 주행</span>
-                            <span class="serviceMoney" id="electronicCar"><b>12km</b> 주행</span>
+                            <span class="serviceMoney" id="electronicCar"></span>
                         </div>
                         <div class="services">
                             <span class="serviceTitle">컴퓨터 사용시간</span>
-                            <span class="serviceMoney" id="computerUse"><b>128</b> 시간</span>
+                            <span class="serviceMoney" id="computerUse"></span>
                         </div>
                         <div class="services">
                             <span class="serviceTitle">백만볼트</span>
-                            <span class="serviceMoney" id="millionVolts"><b>6</b> 회</span>
+                            <span class="serviceMoney" id="millionVolts"></span>
                         </div>
                         <div class="newContents">
                             <span class="newContentsTitle">새로운 콘텐츠 보기</span>
@@ -143,7 +138,6 @@
                     </div>
                 </div>
             </div>
-            <% } %>
         </div>
 
         <div id="menu" class="off">
@@ -172,6 +166,17 @@
         <div id="main_lo" class="a1"></div>
         <div id="paro_lo"></div>
     </div>
+
+    <script>
+        function electronicCalc () {
+            let electronicValue = document.getElementById('electronicValue').value;
+            document.getElementById('electronicMoney').innerHTML = electronicValue / 100 + " 원 아낌";
+            document.getElementById('smartphoneCharge').innerHTML = Math.floor( electronicValue / 100) + " % 충전";
+            document.getElementById('electronicCar').innerHTML = electronicValue / 10000 + " km 주행";
+            document.getElementById('computerUse').innerHTML = Math.floor( electronicValue / 3000) + " 시간";
+            document.getElementById('millionVolts').innerHTML = electronicValue / 1000000 + " 회";
+        }
+    </script>
 
 
     <script src="/javascripts/device-uuid/lib/device-uuid.js" type="text/javascript"></script>

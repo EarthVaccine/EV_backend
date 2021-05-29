@@ -1,0 +1,95 @@
+.inputContainer{
+    padding: 12px 16px;
+    color: white;
+    background: rgb(40, 40, 48);
+    font-size: 14px;
+}
+.btn{
+    background-color: rgb(124, 71, 233);
+    color: white;
+}
+.mainContainer {
+    border-radius: 4px;
+    background-color: rgb(49, 49, 60);
+    box-sizing: border-box;
+}
+.mainTitle {
+    border-bottom: 1px solid rgb(28, 28, 31);
+    color: rgb(195, 195, 211);
+    padding: 12px 16px;
+    align-self: stretch;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: normal;
+}
+.subContainer {
+    border-bottom: 1px solid rgb(28, 28, 31);
+    color: rgb(195, 195, 211);
+    padding: 16px;
+    align-self: stretch;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    padding: 8px 16px 16px 8px;
+}
+.mainService {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.services {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 4px;
+    background: rgb(40, 40, 48);
+    flex: 1 0 222px;
+    box-sizing: border-box;
+    margin: 8px 0px 0px 8px;
+}
+.serviceTitle {
+    color: rgb(195, 195, 211);
+    line-height: 20px;
+    font-size: 14px;
+}
+.serviceMoney{
+    font-size: 24px;
+    line-height: 36px;
+}
+#electronicMoney {
+    color: rgb(124, 71, 233);
+}
+#smartphoneCharge {
+    color: rgb(30, 161, 247);
+}
+#electronicCar {
+    color: rgb(0, 187, 163);
+}
+#computerUse {
+    color: rgb(127, 208, 71);
+}
+#millionVolts {
+    color: rgb(255, 193, 31);
+}
+.newContents {
+    padding: 16px;
+    border-radius: 4px;
+    flex: 1 0 222px;
+    box-sizing: border-box;
+    margin: 8px 0px 0px 8px;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: rgb(28, 28, 31);
+    cursor: pointer;
+}
+.newContentsTitle {
+    color: inherit;
+    line-height: 20px;
+    font-size: 14px;
+}
