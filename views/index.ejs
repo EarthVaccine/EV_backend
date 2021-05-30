@@ -12,6 +12,19 @@
     <link rel="stylesheet" href="/stylesheets/animations.css">
     <link rel="stylesheet" href="/stylesheets/navigation.css">
     <link rel="stylesheet" href="/stylesheets/parody.css">
+    <link rel="stylesheet" href="/stylesheets/menu.css">
+
+    <script>
+        (function () {
+            let filter = "win16|win32|win64|mac|macintel";
+
+            if(navigator.platform) {
+                if(filter.indexOf(navigator.platform.toLowerCase()) >= 0) {
+                    alert("현재 디바이스가 pc 로 인식되었습니다.\n해상도 최적을 위해 모바일로 접속해주시길 바랍니다.");
+                }
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="container">
@@ -108,18 +121,6 @@
         <div id="paro_lo"></div>
     </div>
 
-    <script>
-        function electronicCalc () {
-            let electronicValue = document.getElementById('electronicValue').value;
-            document.getElementById('electronicMoney').innerHTML = electronicValue / 100 + " 원 아낌";
-            document.getElementById('smartphoneCharge').innerHTML = Math.floor( electronicValue / 100) + " % 충전";
-            document.getElementById('electronicCar').innerHTML = electronicValue / 10000 + " km 주행";
-            document.getElementById('computerUse').innerHTML = Math.floor( electronicValue / 3000) + " 시간";
-            document.getElementById('millionVolts').innerHTML = electronicValue / 1000000 + " 회";
-        }
-    </script>
-
-
     <script src="/javascripts/device-uuid/lib/device-uuid.js" type="text/javascript"></script>
     <script src="/javascripts/screen.js"></script>
     <script>
@@ -153,6 +154,15 @@
             } else {
                 cbx.classList.add("off");
             }
+        }
+
+        function electronicCalc () {
+            let electronicValue = document.getElementById('electronicValue').value;
+            document.getElementById('electronicMoney').innerHTML = electronicValue / 100 + " 원 아낌";
+            document.getElementById('smartphoneCharge').innerHTML = Math.floor( electronicValue / 100) + " % 충전";
+            document.getElementById('electronicCar').innerHTML = electronicValue / 10000 + " km 주행";
+            document.getElementById('computerUse').innerHTML = Math.floor( electronicValue / 3000) + " 시간";
+            document.getElementById('millionVolts').innerHTML = electronicValue / 1000000 + " 회";
         }
     </script>
 
