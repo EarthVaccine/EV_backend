@@ -4,6 +4,7 @@ const autoIncrement = require('mongoose-auto-increment');
 const Schema = mongoose.Schema;
 
 var userSchema = new Schema({
+	_id: Schema.Types.ObjectId,
 	id : {
 		type: String, 
 		default: uuid.v1,
