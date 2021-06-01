@@ -13,7 +13,43 @@
   
 > main page 에 main_container라는 클래스를 가진 곳에서 드래그 해도 인식하지 않습니다.
 > > tagul 글이 있을 위치이기 때문에 일부러 그쪽에는 이벤트를 넣지 않았습니다.
-  
+
+
+## DB 관련
+### Settings ✅
+```
+mkdir config
+touch mongoose.js
+```
+mongoose.js => 노션에 있는 소스를 붙여넣어주세요~! 비밀번호 정보가 있어서 노션에다가 올립니다. ✨
+
+### DB Schema 🌈
+간단하게, 어떠한 구조로 모델링이 되었는지 소개를 시켜 드리겠습니다~ 🎉
+```json
+// userSchema
+// id 값으로 uuid module을 통하여, 유저 각각의 id를 저장하고 있어요 🙌
+id : {
+	type: String, 
+	default: uuid.v1,
+	unique : true
+}, 
+
+// cause_active 값으로 Array 형태이며, 유저가 원하는 단어들을 저장하고 있어요 🙌
+cause_active : {
+	type : Array
+}
+```
+```js
+// 여기도 userSchema 부분인데, 여기에는 카운트 숫자를 저장하고 있어요 🙌
+autoIncrement.initialize(mongoose.connection);
+userSchema.plugin(autoIncrement.plugin, {
+    model:'users',
+    field: 'uid', // auto-increment할 field
+    startAt: 0, // 0에서 부터
+    increment: 1 // 1씩 증가
+});
+
+```
 
 ## 실행방법
 
