@@ -228,7 +228,7 @@ if (!window.clearImmediate) {
       classes: ['cloud'],
 
       hover: null,
-      click: () => {console.log("aa")}
+      click: (e) => {console.log(e)}
     }
 
     if (options) {
@@ -833,6 +833,7 @@ if (!window.clearImmediate) {
             styleRules.color = color
           }
           span.textContent = word
+          span.id = causes_id[word];
           for (var cssProp in styleRules) {
             span.style[cssProp] = styleRules[cssProp]
           }
