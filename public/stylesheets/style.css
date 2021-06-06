@@ -16,6 +16,9 @@ body {
   position: relative;
 }
 
+.opacity {
+  opacity: 1;
+}
 
 /* main page style */
 #main {
