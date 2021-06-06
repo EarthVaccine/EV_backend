@@ -32,3 +32,13 @@ window.onload = () => {
         }
     }
 }
+
+let cookie;
+(function () {
+    let xhr = request('POST', '/get_cookie');
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+            cookie = JSON.parse(JSON.parse(xhr.responseText).cookie.cause_data);
+        }
+    }
+})();

@@ -228,7 +228,7 @@ if (!window.clearImmediate) {
       classes: ['cloud'],
 
       hover: null,
-      click: (e) => {console.log(e)}
+      click: (e) => {bottom_up(e)}
     }
 
     if (options) {
@@ -757,33 +757,33 @@ if (!window.clearImmediate) {
       } else {
         classes = settings.classes
       }
-
+      
       elements.forEach(function (el) {
         if (el.getContext) {
           var ctx = el.getContext('2d')
           var mu = info.mu
-
+          
           // Save the current state before messing it
           ctx.save()
           ctx.scale(1 / mu, 1 / mu)
-
+          
           ctx.font = fontWeight + ' ' +
-                     (fontSize * mu).toString(10) + 'px ' + settings.fontFamily
+          (fontSize * mu).toString(10) + 'px ' + settings.fontFamily
           ctx.fillStyle = color
-
+          
           // Translate the canvas position to the origin coordinate of where
           // the text should be put.
           ctx.translate(
             (gx + info.gw / 2) * g * mu,
             (gy + info.gh / 2) * g * mu
-          )
+            )
 
-          if (rotateDeg !== 0) {
+            if (rotateDeg !== 0) {
             ctx.rotate(-rotateDeg)
           }
 
           // Finally, fill the text.
-
+          
           // XXX: We cannot because textBaseline = 'top' here because
           // Firefox and Chrome uses different default line-height for canvas.
           // Please read https://bugzil.la/737852#c6.
@@ -793,29 +793,29 @@ if (!window.clearImmediate) {
           ctx.fillText(
             word, info.fillTextOffsetX * mu,
             (info.fillTextOffsetY + fontSize * 0.5) * mu
-          )
-
+            )
+            
           // The below box is always matches how <span>s are positioned
           /* ctx.strokeRect(info.fillTextOffsetX, info.fillTextOffsetY,
             info.fillTextWidth, info.fillTextHeight) */
-
-          // Restore the state.
-          ctx.restore()
-        } else {
-          // drawText on DIV element
+            
+            // Restore the state.
+            ctx.restore()
+          } else {
+            // drawText on DIV element
           var span = document.createElement('span')
           var transformRule = ''
           transformRule = 'rotate(' + (-rotateDeg / Math.PI * 180) + 'deg) '
           if (info.mu !== 1) {
             transformRule +=
-              'translateX(-' + (info.fillTextWidth / 4) + 'px) ' +
-              'scale(' + (1 / info.mu) + ')'
+            'translateX(-' + (info.fillTextWidth / 4) + 'px) ' +
+            'scale(' + (1 / info.mu) + ')'
           }
           var styleRules = {
             position: 'absolute',
             display: 'block',
             font: fontWeight + ' ' +
-              (fontSize * info.mu) + 'px ' + settings.fontFamily,
+            (fontSize * info.mu) + 'px ' + settings.fontFamily,
             left: ((gx + info.gw / 2) * g + info.fillTextOffsetX) + 'px',
             top: ((gy + info.gh / 2) * g + info.fillTextOffsetY) + 'px',
             width: info.fillTextWidth + 'px',
@@ -845,11 +845,13 @@ if (!window.clearImmediate) {
           if (classes) {
             span.className += classes
           }
+          let del_cause = total_cause.filter(x => !cookie.includes(x));
+          if(del_cause.indexOf(word) != -1) span.classList.add('disappear');
           el.appendChild(span)
         }
       })
     }
-
+    
     /* Help function to updateGrid */
     var fillGridAt = function fillGridAt (x, y, drawMask, dimension, item) {
       if (x >= ngx || y >= ngy || x < 0 || y < 0) {

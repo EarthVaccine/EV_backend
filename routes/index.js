@@ -6,6 +6,23 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/jwt");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const { json } = require("express");
+const { isBuffer } = require("util");
+
+const causes_name = {
+    'earth': '지구',
+    'greenhouse': '온실',
+    'sea​Level': '해수면',
+    'greenGas': '온실가스',
+    'northPole': '북극',
+    'warming': '온난화',
+    'weatherChange': '기후변화',
+    'city': '도시',
+    'situation': '사태',
+    'ecosystem': '생태계',
+    'carbonDioxide': '이산화탄소'
+};
+const lists = ['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소'];
 
 router
 .get('/', (req, res) => {
@@ -15,7 +32,7 @@ router
 .post('/setCookie', (req, res) => {
     let token = req.cookies.user;
     if(!token) {
-        let user_cookie = jwt.sign({ uid: crypto.createHash('sha256').update(req.body.uid).digest('hex'), cause_data: JSON.stringify(['지구', '온실', '온실기체', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소']) }, config.secret, {expiresIn:'100d'});
+        let user_cookie = jwt.sign({ uid: crypto.createHash('sha256').update(req.body.uid).digest('hex'), cause_data: JSON.stringify(['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소']) }, config.secret, {expiresIn:'100d'});
         res.cookie("user", user_cookie);
     } else {
         jwt.verify(token, config.secret, (err, decoded) => {
@@ -29,14 +46,48 @@ router
 })
 
 .post('/cause_numerical', async (req, res) => {
-    let lists = ['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소'];
-
     let numerical = await get_numerical(lists);
     res.status(200).json({cause_numerical: numerical});
 })
+.post('/get_cookie', (req, res) => {
+    let token = req.cookies.user;
+    if(!token) return res.status(400).json({msg: '쿠키가 존재하지 않습니다.'});
+    jwt.verify(token, config.secret, (err, decoded) => {
+        if(err) return res.status(400).json({err: true, msg: err});
+        res.status(200).json({cookie: decoded});
+    });
+})
+
+.post('/del_cause', (req, res) => {
+    let token = req.cookies.user;
+    if(!token) return res.status(400).json({msg: '쿠키가 존재하지 않습니다.'});
+    jwt.verify(token, config.secret, (err, decoded) => {
+        if(err) return res.status(400).json({err: true, msg: err});
+        let causes = JSON.parse(decoded.cause_data);
+        causes.splice(causes.indexOf(causes_name[req.body.cause]), 1);
+
+        let user_cookie = jwt.sign({ uid: decoded.uid, cause_data: JSON.stringify(causes) }, config.secret, {expiresIn:'365d'});
+        res.clearCookie("user");
+        res.cookie("user", user_cookie);
+        return res.status(200).json({ result: "del success" });
+    });
+})
+.post('/add_cause', (req, res) => {
+    let token = req.cookies.user;
+    if(!token) return res.status(400).json({msg: '쿠키가 존재하지 않습니다.'});
+    jwt.verify(token, config.secret, (err, decoded) => {
+        if(err) return res.status(400).json({err: true, msg: err});
+        let causes = JSON.parse(decoded.cause_data);
+        causes.splice(lists.indexOf(causes_name[req.body.cause]), 0, causes_name[req.body.cause]);
+        
+        let user_cookie = jwt.sign({ uid: decoded.uid, cause_data: JSON.stringify(causes) }, config.secret, {expiresIn:'365d'});
+        res.clearCookie("user");
+        res.cookie("user", user_cookie);
+        return res.status(200).json({ result: "add success" });
+    });
+})
 
 module.exports = router;
-
 
 
 async function get_numerical(lists) {

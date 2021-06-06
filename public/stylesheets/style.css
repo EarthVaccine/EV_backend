@@ -29,8 +29,8 @@ body {
   position: absolute;
 }
 #main .main_container {
-  width: 85%;
-  height: 50%;
+  width: 318.75px;
+  height: 333.5px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -80,4 +80,13 @@ body {
   transform: translate(-50%, 0%);
   top: 11px;
   left: 50%;
+}
+
+#bottom_slider .causeTitle {
+  color: white;
+  font-family: AppleSDGothicNeoB00;
+  font-size: 35px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }

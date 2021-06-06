@@ -11,8 +11,16 @@ let main_container = document.querySelector(".main_container");
                     [i, data.cause_numerical[i]]
                 )
             }
-            console.log(list);
             WordCloud(main_container, {list});
         }
     }
 })();
+
+function live_del(cause) {
+    let target = document.getElementById(cause);
+    target.classList.add("disappear");
+}
+function live_add(cause) {
+    let target = document.getElementById(cause);
+    target.classList.remove("disappear");
+}
