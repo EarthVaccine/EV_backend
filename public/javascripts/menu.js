@@ -19,7 +19,8 @@ let custom_box = document.querySelector(".custom_box");
             }
             
 
-            cbx.onclick = (e) => { edit_cause(e.target.id); };
+            cbx.ontouchend = (e) => { edit_cause(e.target.id); };
+            // cbx.onclick = (e) => { edit_cause(e.target.id) };
             
             let check_span = document.createElement("span");
             check_span.classList.add("checkspan");
@@ -78,23 +79,35 @@ function edit_cause(id) {
         }
         let xhr = request('POST', 'del_cause', {cause});
         xhr.onreadystatechange = () => {
-            if(xhr.readyState === 4 && xhr.status === 200) {
-                target.parentElement.classList.remove("off", "on");
-                target.parentElement.classList.add("off");
-                target.checked = false;
+            try {
+                if(xhr.readyState === 4 && xhr.status === 200) {
+                    target.parentElement.classList.remove("off", "on");
+                    target.parentElement.classList.add("off");
+                    target.checked = false;
 
-                live_del(cause);
+                    live_del(cause);
+                } else if(xhr.readyState === 4 && xhr.status !== 200) {
+                    target.checked = true;
+                }
+            } catch(err) {
+                target.checked = true;
             }
         }
     } else {
         let xhr = request('POST', 'add_cause', {cause});
         xhr.onreadystatechange = () => {
-            if(xhr.readyState === 4 && xhr.status === 200) {
-                target.parentElement.classList.remove("off", "on");
-                target.parentElement.classList.add("on");
-                target.checked = true;
+            try {
+                if(xhr.readyState === 4 && xhr.status === 200) {
+                    target.parentElement.classList.remove("off", "on");
+                    target.parentElement.classList.add("on");
+                    target.checked = true;
 
-                live_add(cause);
+                    live_add(cause);
+                } else if(xhr.readyState === 4 && xhr.status !== 200) {
+                    target.checked = false;
+                }
+            } catch(err) {
+                target.checked = false;
             }
         }
     }

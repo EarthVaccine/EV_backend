@@ -29,6 +29,10 @@ router
     res.render('index');
 })
 
+.post('/test', (req, res) => {
+    res.status(404).json({msg: "Hello World"});
+})
+
 .post('/setCookie', (req, res) => {
     let token = req.cookies.user;
     if(!token) {

@@ -160,7 +160,7 @@ let y1, y2;
 
 // main screen animation
 main_page.addEventListener("touchstart", (e) => {
-    if(e.target !== e.currentTarget) if(e.target.className == "cloud") return;
+    if(e.target !== e.currentTarget) if(e.target.classList.contains("cloud")) return;
     if(main_page_status.result && !menu_page_status.result) {
         e.preventDefault();
         startX = e.changedTouches[0].screenX;
@@ -180,7 +180,7 @@ main_page.addEventListener("touchstart", (e) => {
     }
 });
 main_page.addEventListener("touchmove", (e) => {
-    if(e.target !== e.currentTarget) if(e.target.className == "cloud") return;
+    if(e.target !== e.currentTarget) if(e.target.classList.contains("cloud")) return;
     if(main_page_status.result) {
         if(x1 - e.changedTouches[0].pageX < 0) {  // 메인페이지에서 왼쪽으로 넘기려 했을 때, 메인페이지는 가만히 있고 메뉴페이지만 이동.
             e.preventDefault();
@@ -223,7 +223,7 @@ main_page.addEventListener("touchmove", (e) => {
     }
 });
 main_page.addEventListener("touchend", (e) => {
-    if(e.target !== e.currentTarget) if(e.target.className == "cloud") return;
+    if(e.target !== e.currentTarget) if(e.target.classList.contains("cloud")) return;
     if(main_page_status.result) {
         endX = e.changedTouches[0].screenX;
         if((endX - startX) > -30 && (endX - startX) < 30) {

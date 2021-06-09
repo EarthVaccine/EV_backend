@@ -228,7 +228,7 @@ if (!window.clearImmediate) {
       classes: ['cloud'],
 
       hover: null,
-      click: (e) => {bottom_up(e)}
+      click: null
     }
 
     if (options) {
@@ -850,6 +850,7 @@ if (!window.clearImmediate) {
           el.appendChild(span)
         }
       })
+      event_set();
     }
     
     /* Help function to updateGrid */
