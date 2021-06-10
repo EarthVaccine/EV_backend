@@ -537,54 +537,68 @@
 
 
 
+.carbonDioxide {
+    position: absolute !important;
+    transform: translate(-50%, -50%) !important;
+    color: white !important;
+}
 #earth.carbonDioxide {
     transform: rotate( 45deg) !important;
     top: calc(50% - 150px) !important;
     left: calc(50% + 10px) !important;
 }
+
 #greenhouse.carbonDioxide {
-    top: calc(50% - 120px) !important;
-    left: calc(50% + 20px) !important;
-    transform: rotate( -45deg) !important;
+top: calc(50% - 125px) !important;
+left: calc(50% + 25px) !important;
+transform: rotate( -45deg) !important;
 }
+
 #sea​Level.carbonDioxide {
-    top: calc(50% - 150px) !important;
-    left: calc(50% - 40px) !important;
-    transform: rotate( -45deg) !important;
+top: calc(50% - 150px) !important;
+left: calc(50% - 40px) !important;
+transform: rotate( -45deg) !important;
 }
+
 #greenGas.carbonDioxide {
-    top: calc(50% - 130px) !important;
-    left: calc(50% - 140px) !important;
-    transform: rotate( 90deg) !important;
+top: calc(50% - 130px) !important;
+left: calc(50% - 140px) !important;
+transform: rotate( 90deg) !important;
 }
+
 #northPole.carbonDioxide {
-    top: calc(50% - 110px) !important;
-    left: calc(50% + 90px) !important;
+top: calc(50% - 110px) !important;
+left: calc(50% + 90px) !important;
 }
+
 #warming.carbonDioxide {
-    top: calc(50% - 90px) !important;
-    left: calc(50% - 80px) !important;
+top: calc(50% - 90px) !important;
+left: calc(50% - 80px) !important;
 }
+
 #weatherChange.carbonDioxide {
-    top: calc(50% - 60px) !important;
-    left: calc(50% + 100px) !important;
+top: calc(50% - 60px) !important;
+left: calc(50% + 100px) !important;
 }
+
 #city.carbonDioxide {
-    top: calc(50% - 100px) !important;
-    left: calc(50% + 90px) !important;
-    transform: rotate( 302deg) !important;
+top: calc(50% - 100px) !important;
+left: calc(50% + 90px) !important;
+transform: rotate( 302deg) !important;
 }
+
 #situation.carbonDioxide {
-    top: calc(50% - 90px) !important;
-    left: calc(50% + 200px) !important;
-    transform: rotate( 90deg) !important;
+top: calc(50% - 100px) !important;
+left: calc(50%) !important;
+transform: rotate( -45deg) !important;
 }
 #ecosystem.carbonDioxide {
-    top: calc(50% - 150px) !important;
-    left: calc(50% - 80px) !important;
+top: calc(50% - 150px) !important;
+left: calc(50% - 80px) !important;
 }
+
 #carbonDioxide.carbonDioxide {
-    top: calc(50% - 100px) !important;
-    left: calc(50% - 50px) !important;
-    transform: rotate( 45deg) !important;
+top: calc(50% - 100px) !important;
+left: calc(50% - 50px) !important;
+transform: rotate( 45deg) !important;
 }

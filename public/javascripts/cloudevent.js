@@ -19,4 +19,5 @@ function bottom_up(e) {
     }
     main_animation_page_status.result = true;
     cause_title.innerHTML = causes_name[e];
+    cause_explain.innerHTML = causes_explain[e];
 }
