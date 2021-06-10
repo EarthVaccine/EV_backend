@@ -16,6 +16,8 @@
 #earth.earth {
     top: calc(35%) !important;
     left: calc(45%) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #greenhouse.earth {
@@ -87,6 +89,8 @@
     top: calc(50% - 280px) !important;
     left: calc(50% - 70px) !important;
     transform: rotate( 90deg) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #sea​Level.greenhouse {
@@ -165,6 +169,8 @@
     top: calc(50%) !important;
     left: calc(50% + 100px) !important;
     transform: rotate( 90deg) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #northPole.greenGas {
@@ -235,6 +241,8 @@
 #northPole.northPole {
     top: calc(50% + 140px) !important;
     left: calc(50% - 100px) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #warming.northPole {
@@ -275,22 +283,21 @@
 
 
 
-#earth.warming {
-    top: calc(50% - 25px) !important;
-    left: calc(50% - 5px) !important;
-    transform: rotate( 90deg) !important;
-}
-
 #greenhouse.warming {
     top: calc(50% - 90px) !important;
     left: calc(50% - 90px) !important;
-    transform: rotate( 45deg) !important;
+    transform: rotate( 
+45deg
+) !important;
 }
+
 
 #sea​Level.warming {
     top: calc(50% + 30px) !important;
-    left: calc(50% + 20px) !important;
-    transform: rotate( 45deg) !important;
+    left: calc(50% + 30px) !important;
+    transform: rotate( 
+45deg
+) !important;
 }
 
 #greenGas.warming {
@@ -298,22 +305,30 @@
     left: calc(50% + 60px) !important;
 }
 
+
 #northPole.warming {
     top: calc(50% + 20px) !important;
     left: calc(50% - 100px) !important;
-    transform: rotate( -45deg) !important;
+    transform: rotate( 
+-45deg
+) !important;
 }
 
 #warming.warming {
-    top: calc(50% - 85px) !important;
+    top: calc(50% - 130px) !important;
     left: calc(50% + 40px) !important;
-    transform: rotate( -45deg) !important;
+    transform: rotate( 
+-45deg
+) !important;
+color: rgb(238, 73, 73) !important;
 }
 
 #weatherChange.warming {
-    top: calc(50% + 50px) !important;
+    top: calc(50% + 60px) !important;
     left: calc(50% - 40px) !important;
-    transform: rotate( 90deg) !important;
+    transform: rotate( 
+90deg
+) !important;
 }
 
 #city.warming {
@@ -327,14 +342,14 @@
 }
 
 #ecosystem.warming {
-    top: calc(50% - 90px) !important;
-    left: calc(50% - 30px) !important;
-    transform: rotate( 90deg) !important;
+    top: calc(50% - 120px) !important;
+    left: calc(50% - 10px) !important;
+    transform: rotate(90deg) !important;
 }
 
 #carbonDioxide.warming {
-    top: calc(50% - 20px) !important;
-    left: calc(50% - 100px) !important;
+    top: calc(50% - 30px) !important;
+    left: calc(50% - 130px) !important;
 }
 
 
@@ -379,6 +394,8 @@
     top: calc(50% - 80px) !important;
     left: calc(50% + 50px) !important;
     transform: rotate( 90deg) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #city.weatherChange {
@@ -452,6 +469,8 @@
     top: calc(50% - 150px) !important;
     left: calc(50% + 36px) !important;
     transform: rotate( 90deg) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #situation.city {
@@ -527,6 +546,8 @@
     top: calc(50% - 141px) !important;
     left: calc(50% - 38px) !important;
     transform: rotate( -45deg) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
 
 #carbonDioxide.ecoSystem {
@@ -549,56 +570,58 @@
 }
 
 #greenhouse.carbonDioxide {
-top: calc(50% - 125px) !important;
-left: calc(50% + 25px) !important;
-transform: rotate( -45deg) !important;
+    top: calc(50% - 125px) !important;
+    left: calc(50% + 25px) !important;
+    transform: rotate( -45deg) !important;
 }
 
 #sea​Level.carbonDioxide {
-top: calc(50% - 150px) !important;
-left: calc(50% - 40px) !important;
-transform: rotate( -45deg) !important;
+    top: calc(50% - 150px) !important;
+    left: calc(50% - 40px) !important;
+    transform: rotate( -45deg) !important;
 }
 
 #greenGas.carbonDioxide {
-top: calc(50% - 130px) !important;
-left: calc(50% - 140px) !important;
-transform: rotate( 90deg) !important;
+    top: calc(50% - 130px) !important;
+    left: calc(50% - 140px) !important;
+    transform: rotate( 90deg) !important;
 }
 
 #northPole.carbonDioxide {
-top: calc(50% - 110px) !important;
-left: calc(50% + 90px) !important;
+    top: calc(50% - 110px) !important;
+    left: calc(50% + 90px) !important;
 }
 
 #warming.carbonDioxide {
-top: calc(50% - 90px) !important;
-left: calc(50% - 80px) !important;
+    top: calc(50% - 90px) !important;
+    left: calc(50% - 80px) !important;
 }
 
 #weatherChange.carbonDioxide {
-top: calc(50% - 60px) !important;
-left: calc(50% + 100px) !important;
+    top: calc(50% - 60px) !important;
+    left: calc(50% + 100px) !important;
 }
 
 #city.carbonDioxide {
-top: calc(50% - 100px) !important;
-left: calc(50% + 90px) !important;
-transform: rotate( 302deg) !important;
+    top: calc(50% - 100px) !important;
+    left: calc(50% + 90px) !important;
+    transform: rotate( 302deg) !important;
 }
 
 #situation.carbonDioxide {
-top: calc(50% - 100px) !important;
-left: calc(50%) !important;
-transform: rotate( -45deg) !important;
+    top: calc(50% - 100px) !important;
+    left: calc(50%) !important;
+    transform: rotate( -45deg) !important;
 }
 #ecosystem.carbonDioxide {
-top: calc(50% - 150px) !important;
-left: calc(50% - 80px) !important;
+    top: calc(50% - 150px) !important;
+    left: calc(50% - 80px) !important;
 }
 
 #carbonDioxide.carbonDioxide {
-top: calc(50% - 100px) !important;
-left: calc(50% - 50px) !important;
-transform: rotate( 45deg) !important;
+    top: calc(50% - 100px) !important;
+    left: calc(50% - 50px) !important;
+    transform: rotate( 45deg) !important;
+    color: rgb(238, 73, 73) !important;
+    font-size: 18px !important;
 }
