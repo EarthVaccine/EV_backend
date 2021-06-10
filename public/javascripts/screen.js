@@ -367,6 +367,7 @@ parody_page.addEventListener("touchend", (e) => {
 
 // bottom screen animation
 bottom_slider.addEventListener("touchstart", (e) => {
+    if(e.target !== e.currentTarget) if(e.target.classList == "causeExplain") return;
     if(bottom_slider_status.result) {
         e.preventDefault();
         startY = e.changedTouches[0].screenY;
@@ -376,6 +377,7 @@ bottom_slider.addEventListener("touchstart", (e) => {
     }
 });
 bottom_slider.addEventListener("touchmove", (e) => {
+    if(e.target !== e.currentTarget) if(e.target.classList == "causeExplain") return;
     if(bottom_slider_status.result) {
         if(y1 - e.changedTouches[0].pageY > 0) {
             e.preventDefault();
@@ -386,6 +388,7 @@ bottom_slider.addEventListener("touchmove", (e) => {
     }
 });
 bottom_slider.addEventListener("touchend", (e) => {
+    if(e.target !== e.currentTarget) if(e.target.classList == "causeExplain") return;
     if(bottom_slider_status.result) {
         endY = e.changedTouches[0].screenY;
         if((endY - startY) < 30) {

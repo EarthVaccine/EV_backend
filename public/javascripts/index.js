@@ -58,4 +58,7 @@ window.onload = () => {
             alert(`쿠키 오류가 발생하였습니다.\n${data.msg}`);
         }
     }
+
+    let causeExplain = document.querySelector(".causeExplain");
+    causeExplain.style.height = window.innerHeight - window.innerHeight * 0.15 - 100 + "px";
 }
