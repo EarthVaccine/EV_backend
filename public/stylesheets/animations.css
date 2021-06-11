@@ -40,3 +40,92 @@
     transition: transform 0.4s ease-in-out;
     transform: translate(0%, 15%) translateY(0%) !important;
 }
+
+
+@keyframes updownearth {
+    0% {
+        top: calc(50% + 30px) !important;
+    }
+    100% {
+        top: calc(50% + 80px) !important;
+    }
+}
+@keyframes updowngreenhouse {
+    0% {
+        top: calc(50% - 69px) !important;
+    } 100% {
+        top: calc(50% - 19px) !important;
+    }
+}
+@keyframes updownsea​Level {
+    0% {
+        top: calc(50% - 64px) !important;
+    }
+    100% {
+        top: calc(50% - 14px) !important;
+    }
+}
+@keyframes updowngreeGas {
+    0% {
+        top: calc(45%) !important;
+    }
+    100% {
+        top: calc(45% + 50px) !important;
+    }
+}
+@keyframes updownnorthPole {
+    0% {
+        top: calc(45% - 28px) !important;
+    }
+    100% {
+        top: calc(45% + 22px) !important;
+    }
+}
+@keyframes updownwarming {
+    0% {
+        top: calc(35% - 10px) !important;
+    }
+    100% {
+        top: calc(35% + 40px) !important;
+    }
+}
+@keyframes updownweatherChange {
+    0% {
+        top: calc(48%) !important;
+    }
+    100% {
+        top: calc(48% + 50px) !important;
+    }
+}
+@keyframes updowncity {
+    0%{
+        top: calc(60%) !important;
+    }
+    100% {
+        top: calc(60% + 50px) !important;
+    }
+}
+@keyframes updownsituation {
+    0% {
+        top: calc(35% - 11px) !important;
+    }
+    100% {
+        top: calc(35% + 39px) !important;
+    }
+}
+@keyframes updownecosystem {
+    0% {
+        top: calc(65% - 9px) !important;
+    }
+    100% {
+        top: calc(65% + 41px) !important;
+    }
+}
+@keyframes updowncarbonDioxide {
+    0% {
+        top: calc(56% - 9px) !important;
+    }
+    100% {
+        top: calc(56% + 41px) !important;
+    }
+}

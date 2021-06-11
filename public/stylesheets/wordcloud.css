@@ -583,7 +583,7 @@
 }
 
 #northPole.carbonDioxide {
-    top: calc(50% - 110px) !important;
+    top: calc(50% - 180px) !important;
     left: calc(50% + 90px) !important;
 }
 
@@ -594,13 +594,14 @@
 }
 
 #weatherChange.carbonDioxide {
-    top: calc(50% - 60px) !important;
-    left: calc(50% + 100px) !important;
+    top: calc(50% - 155px) !important;
+    left: calc(50% + 50px) !important;
+    transform: rotate(55deg) !important;
 }
 
 #city.carbonDioxide {
-    top: calc(50% - 100px) !important;
-    left: calc(50% + 90px) !important;
+    top: calc(50% - 155px) !important;
+    left: calc(50% + 100px) !important;
     transform: rotate( 302deg) !important;
 }
 
@@ -611,12 +612,13 @@
 }
 #ecosystem.carbonDioxide {
     top: calc(50% - 150px) !important;
-    left: calc(50% - 80px) !important;
+    left: calc(50% - 100px) !important;
 }
 
 #carbonDioxide.carbonDioxide {
-    top: calc(50% - 90px) !important;
-    left: calc(50% - 80px) !important;
+    top: calc(50% - 110px) !important;
+    left: calc(50% - 130px) !important;
     color: rgb(238, 73, 73) !important;
+    transform: rotate(311deg) !important;
     font-size: 18px !important;
 }

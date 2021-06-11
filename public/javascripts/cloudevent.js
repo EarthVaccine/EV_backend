@@ -20,4 +20,13 @@ function bottom_up(e) {
     main_animation_page_status.result = true;
     cause_title.innerHTML = causes_name[e];
     cause_explain.innerHTML = causes_explain[e];
+    if(e == "carbonDioxide") {
+        let part1 = ["ecosystem", "greenGas", "carbonDioxide"];
+        let part2 = ["earth", "greenhouse", "seaLevel", "warming", "situation"];
+        let part3 = ["city", "weatherChange", "northPole"];
+
+        for(let i of part1) {
+            
+        }
+    }
 }
