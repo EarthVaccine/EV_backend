@@ -18,11 +18,11 @@ const causes_name = {
     'warming': '온난화',
     'weatherChange': '기후변화',
     'city': '도시',
-    'situation': '사태',
+    'sea': '바다',
     'ecosystem': '생태계',
     'carbonDioxide': '이산화탄소'
 };
-const lists = ['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소'];
+const lists = ['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '바다', '생태계', '이산화탄소'];
 
 router
 .get('/', (req, res) => {
@@ -32,7 +32,7 @@ router
 .post('/setCookie', (req, res) => {
     let token = req.cookies.user;
     if(!token) {
-        let user_cookie = jwt.sign({ uid: crypto.createHash('sha256').update(req.body.uid).digest('hex'), cause_data: JSON.stringify(['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소']) }, config.secret, {expiresIn:'100d'});
+        let user_cookie = jwt.sign({ uid: crypto.createHash('sha256').update(req.body.uid).digest('hex'), cause_data: JSON.stringify(['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '바다', '생태계', '이산화탄소']) }, config.secret, {expiresIn:'100d'});
         res.cookie("user", user_cookie);
     } else {
         jwt.verify(token, config.secret, (err, decoded) => {
@@ -102,7 +102,7 @@ async function get_numerical(lists) {
                 '온난화': 0,
                 '기후변화': 0,
                 '도시': 0,
-                '사태': 0,
+                '바다': 0,
                 '생태계': 0,
                 '이산화탄소': 0
             };

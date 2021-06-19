@@ -1,5 +1,5 @@
 let cookie;
-const total_cause = ['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '사태', '생태계', '이산화탄소'];
+const total_cause = ['지구', '온실', '해수면', '온실가스', '북극', '온난화', '기후변화', '도시', '바다', '생태계', '이산화탄소'];
 
 const causes_id = {
     '지구': 'earth',
@@ -10,7 +10,7 @@ const causes_id = {
     '온난화': 'warming',
     '기후변화': 'weatherChange',
     '도시': 'city',
-    '사태': 'situation',
+    '바다': 'sea',
     '생태계': 'ecosystem',
     '이산화탄소': 'carbonDioxide'
 };
@@ -23,7 +23,7 @@ const causes_name = {
     'warming': '온난화',
     'weatherChange': '기후변화',
     'city': '도시',
-    'situation': '사태',
+    'sea': '바다',
     'ecosystem': '생태계',
     'carbonDioxide': '이산화탄소'
 };
