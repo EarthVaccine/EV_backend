@@ -61,7 +61,7 @@
     transform: rotate(-45deg) !important;
 }
 
-#situation.earth {
+#sea.earth {
     top: calc(35% - 11px) !important;
     left: calc(58%) !important;
     transform: rotate(45deg) !important;
@@ -127,7 +127,7 @@
     left: calc(50% + 90px) !important;
 }
 
-#situation.greenhouse {
+#sea.greenhouse {
     top: calc(50% - 290px) !important;
     left: calc(50% - 150px) !important;
     transform: rotate( 90deg) !important;
@@ -194,7 +194,7 @@
     left: calc(50% - 50px) !important;
 }
 
-#situation.greenGas {
+#sea.greenGas {
     top: calc(50% + 90px) !important;
     left: calc(50% - 20px) !important;
     transform: rotate( 90deg) !important;
@@ -262,7 +262,7 @@
     left: calc(50% - 50px) !important;
 }
 
-#situation.northPole {
+#sea.northPole {
     top: calc(50% + 90px) !important;
     left: calc(50% - 20px) !important;
     transform: rotate( 90deg) !important;
@@ -327,7 +327,7 @@
     left: calc(50% - 20px) !important;
 }
 
-#situation.warming {
+#sea.warming {
     top: calc(50% - 20px) !important;
     left: calc(50% - 20px) !important;
 }
@@ -395,7 +395,7 @@
     transform: rotate( 90deg) !important;
 }
 
-#situation.weatherChange {
+#sea.weatherChange {
     top: calc(50% - 90px) !important;
     left: calc(50% + 200px) !important;
     transform: rotate( 90deg) !important;
@@ -465,7 +465,7 @@
     font-size: 18px !important;
 }
 
-#situation.city {
+#sea.city {
     top: calc(50% - 200px) !important;
     left: calc(50%) !important;
     transform: rotate(0deg) !important;
@@ -529,7 +529,7 @@
     left: calc(50% - 53px) !important;
 }
 
-#situation.ecoSystem {
+#sea.ecoSystem {
     top: calc(50% - 90px) !important;
     left: calc(50% + 200px) !important;
     transform: rotate( 90deg) !important;
@@ -605,7 +605,7 @@
     transform: rotate( 302deg) !important;
 }
 
-#situation.carbonDioxide {
+#sea.carbonDioxide {
     top: calc(50% - 100px) !important;
     left: calc(50%) !important;
     transform: rotate( -45deg) !important;
