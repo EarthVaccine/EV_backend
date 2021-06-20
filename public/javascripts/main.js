@@ -12,6 +12,8 @@ let main_container = document.querySelector(".main_container");
                 )
             }
             WordCloud(main_container, {list});
+            let loading_page = document.querySelector(".loadingPage");
+            loading_page.classList.add("opacity");
         }
     }
 })();
@@ -23,4 +25,15 @@ function live_del(cause) {
 function live_add(cause) {
     let target = document.getElementById(cause);
     target.classList.remove("disappear");
+}
+
+let loading_video = document.getElementById("loadingV");
+loading_video.onended = () => {
+    setTimeout(() => {
+        let loader = document.querySelector(".loader");
+        loader.classList.remove("opacity");
+        setTimeout(() => {
+            loading_page.parentNode.removeChild(loading_page);
+        }, 300);
+    }, 500);
 }
