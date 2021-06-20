@@ -14,6 +14,7 @@ let main_container = document.querySelector(".main_container");
             WordCloud(main_container, {list});
             let loading_page = document.querySelector(".loadingPage");
             loading_page.classList.add("opacity");
+            setTimeout(() => {loading_page.parentNode.removeChild(loading_page);}, 500)
         }
     }
 })();
@@ -32,9 +33,5 @@ loading_video.onended = () => {
     setTimeout(() => {
         let loader = document.querySelector(".loader");
         loader.classList.remove("opacity");
-        setTimeout(() => {
-            let loading_page = document.querySelector(".loadingPage");
-            loading_page.parentNode.removeChild(loading_page);
-        }, 300);
     }, 500);
 }
