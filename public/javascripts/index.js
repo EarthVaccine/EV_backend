@@ -72,3 +72,7 @@ window.onload = () => {
     let causeExplain = document.querySelector(".causeExplain");
     causeExplain.style.height = window.innerHeight - window.innerHeight * 0.15 - 100 + "px";
 }
+
+function alert(msg) {
+    let alert_div = document.getElementById("alert");
+}

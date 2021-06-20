@@ -33,6 +33,7 @@ loading_video.onended = () => {
         let loader = document.querySelector(".loader");
         loader.classList.remove("opacity");
         setTimeout(() => {
+            let loading_page = document.querySelector(".loadingPage");
             loading_page.parentNode.removeChild(loading_page);
         }, 300);
     }, 500);
