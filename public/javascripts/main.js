@@ -1,5 +1,7 @@
 let main_container = document.querySelector(".main_container");
 
+main_container.ondblclick = (e) => {console.log(e);}
+
 (function () {
     let xhr = request('POST', '/cause_numerical/');
     xhr.onreadystatechange = () => {

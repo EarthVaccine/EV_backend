@@ -6,6 +6,7 @@ function event_set() {
     let clouds = document.querySelectorAll(".cloud");
     for(let i of clouds) {
         i.onclick = (e) => {bottom_up(e);}
+        i.ondblclick = (e) => {console.log(e);}
     }
 }
 
@@ -20,13 +21,13 @@ function bottom_up(e) {
     main_animation_page_status.result = true;
     cause_title.innerHTML = causes_name[e];
     cause_explain.innerHTML = causes_explain[e];
-    if(e == "carbonDioxide") {
-        let part1 = ["ecosystem", "greenGas", "carbonDioxide"];
-        let part2 = ["earth", "greenhouse", "seaLevel", "warming", "situation"];
-        let part3 = ["city", "weatherChange", "northPole"];
+    // if(e == "carbonDioxide") {
+    //     let part1 = ["ecosystem", "greenGas", "carbonDioxide"];
+    //     let part2 = ["earth", "greenhouse", "seaLevel", "warming", "situation"];
+    //     let part3 = ["city", "weatherChange", "northPole"];
 
-        for(let i of part1) {
+    //     for(let i of part1) {
             
-        }
-    }
+    //     }
+    // }
 }
